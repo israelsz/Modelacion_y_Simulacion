@@ -14,4 +14,7 @@ H6 = (3 * s + 2) / (5 * s^2 + 7 * s + 10);
 R3 = feedback(H3, 1, +1);
 Rx = R3 * parallel(H4, H5);
 R6 = Rx * H6;
-H = H1 + H2 + R6
+H = H1 + H2 + R6 %Imprime el resultado por consola
+
+% Se grafica la respuesta al escalón para ambos lazos
+graficar(H, "Respuesta al escalón para la función de transferencia resultante")
