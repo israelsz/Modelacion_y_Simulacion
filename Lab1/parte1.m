@@ -58,3 +58,15 @@ stabletime_H2c = stepinfo(H2c).SettlingTime;
 % Se grafica la respuesta al escalón para ambos lazos
 graficar(H2o, "Respuesta al escalón en Lazo Abierto para 2° Ecuación")
 graficar(H2c, "Respuesta al escalón en Lazo Cerrado para 2° Ecuación")
+
+%% Imprimir tabla resumen
+Funcion = ["Función 1"; "Función 1"; "Función 2"; "Función 2"];
+Lazo = ["Lazo Abierto"; "Lazo Cerrado"; "Lazo Abierto"; "Lazo Cerrado"];
+Ceros = [ceros_H1o; ceros_H1c; sprintf("%d ; %d",ceros_H2o); sprintf("%d ; %d",ceros_H2c)];
+Polos = [polos_H1o; polos_H1c; sprintf("%d ; %d",polos_H2o); sprintf("%d ; %d",polos_H2c)];
+GananciaEstatica = [ganancia_H1o; ganancia_H1c; ganancia_H2o; ganancia_H2c];
+TiempoEstabilizacion = [stabletime_H1o; stabletime_H1c; stabletime_H2o; stabletime_H2c];
+disp("---------------Tabla Resumen---------------")
+Tabla = table(Funcion, Lazo, Ceros, Polos, GananciaEstatica, TiempoEstabilizacion)
+
+
